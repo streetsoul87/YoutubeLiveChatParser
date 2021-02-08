@@ -18,26 +18,9 @@
 <body>
     <div class="result"></div>
     <script>
-        const name = localStorage.getItem('name');
-        if(name === null ){
-            document.querySelector('body').innerHTML = `
+        document.querySelector('body').innerHTML = `
             <input type="text" placeholder="Input URL" class="form">
             <button class="submit">submit</button>`;
-
-            document.querySelector('.submit').addEventListener('click',()=>{
-                const value = document.querySelector('.form').value;
-                localStorage.setItem('name',value);
-                document.querySelector('body').innerHTML = `<div class="result">succeed!</div>`;
-                document.querySelector('body').style.backgroundColor = 'blue';
-            })
-        }
-        else{
-            const name = localStorage.getItem('name');
-            document.querySelector('body').innerHTML = `<div class="result">${name}</div>`;
-            document.querySelector('body').style.alignText = 'center';
-            document.querySelector('body').style.backgroundColor = 'blue';
-        }
     </script>
-
 </body>
 </html>
