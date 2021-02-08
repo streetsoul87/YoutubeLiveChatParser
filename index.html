@@ -21,7 +21,7 @@
         const name = localStorage.getItem('name');
         if(name === null ){
             document.querySelector('body').innerHTML = `
-            <input type="text" placeholder="이름" class="form">
+            <input type="text" placeholder="Input URL" class="form">
             <button class="submit">submit</button>`;
 
             document.querySelector('.submit').addEventListener('click',()=>{
