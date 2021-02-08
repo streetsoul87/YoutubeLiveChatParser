@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .result{
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="result"></div>
+    <script>
+        const name = localStorage.getItem('name');
+        if(name === null ){
+            document.querySelector('body').innerHTML = `
+            <input type="text" placeholder="이름" class="form">
+            <button class="submit">submit</button>`;
+
+            document.querySelector('.submit').addEventListener('click',()=>{
+                const value = document.querySelector('.form').value;
+                localStorage.setItem('name',value);
+                document.querySelector('body').innerHTML = `<div class="result">succeed!</div>`;
+                document.querySelector('body').style.backgroundColor = 'blue';
+            })
+        }
+        else{
+            const name = localStorage.getItem('name');
+            document.querySelector('body').innerHTML = `<div class="result">${name}</div>`;
+            document.querySelector('body').style.alignText = 'center';
+            document.querySelector('body').style.backgroundColor = 'blue';
+        }
+    </script>
+
+</body>
+</html>
